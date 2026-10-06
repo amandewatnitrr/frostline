@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Frostline</title>
+    <meta name="description" content="What to plant this week, from your frost dates and a model that runs on your own machine." />
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <main>
+      <header>
+        <h1>Frostline</h1>
+        <p class="lede">What to plant this week. Then close the laptop and go outside.</p>
+        <p id="status" class="status" role="status">Checking local model&hellip;</p>
+      </header>
+
+      <form id="form" novalidate>
+        <label>
+          Today
+          <input id="date" name="date" type="date" required />
+        </label>
+        <label>
+          Last spring frost <span class="hint">MM-DD</span>
+          <input id="last-frost" name="lastFrost" type="text" inputmode="numeric" placeholder="04-30" pattern="\d{2}-\d{2}" maxlength="5" required />
+        </label>
+        <label>
+          First fall frost <span class="hint">MM-DD</span>
+          <input id="first-frost" name="firstFrost" type="text" inputmode="numeric" placeholder="10-15" pattern="\d{2}-\d{2}" maxlength="5" required />
+        </label>
+        <button type="submit">Plan my week</button>
+      </form>
+      <p class="hint">Your local extension office or a frost-date lookup can give you these. Only the dates are used. Your location is never asked for or sent anywhere.</p>
+
+      <p id="error" class="error" role="alert" hidden></p>
+
+      <section id="card" hidden>
+        <h2>Field card <span id="card-date"></span></h2>
+        <div id="groups"></div>
+        <div id="coach-box">
+          <h3>Coach note</h3>
+          <p id="coach" aria-live="polite"></p>
+        </div>
+        <button id="print" type="button" class="secondary">Print field card</button>
+      </section>
+    </main>
+    <script type="module" src="/app.js"></script>
+  </body>
+</html>

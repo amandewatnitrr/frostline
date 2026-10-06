@@ -1,0 +1,23 @@
+{
+  "name": "frostline",
+  "version": "1.0.0",
+  "description": "A frost-date garden planner that runs on your own machine: deterministic planting windows plus a coach note from a local open-weight model (Gemma via Ollama).",
+  "type": "module",
+  "private": true,
+  "license": "MIT",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "start": "node src/server.js",
+    "test": "node --test"
+  },
+  "keywords": [
+    "hacktoberfest",
+    "open-source-ai",
+    "gemma",
+    "ollama",
+    "gardening",
+    "local-first"
+  ]
+}
